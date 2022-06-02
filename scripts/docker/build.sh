@@ -8,7 +8,6 @@ fi
 
 set -eu
 
-ls -al
 (cd scripts/docker && docker-compose up -d)
 
 docker run --rm -v "$PWD":/app treeder/bump --filename scripts/docker/postgresql/VERSION patch
@@ -44,7 +43,7 @@ docker build -t $MYSQL_IMAGE_NAME ./scripts/docker/mysql
 docker tag $MYSQL_IMAGE_NAME $DOCKER_HUB_USERNAME/$MYSQL_IMAGE_NAME:$MYSQL_DOCKER_TAG
 docker push $DOCKER_HUB_USERNAME/$MYSQL_IMAGE_NAME:$MYSQL_DOCKER_TAG
 
-(cd docker && docker-compose down)
+(cd scripts/docker && docker-compose down)
 
 if [ ! -z "$CI" ]; then
 git add -A
