@@ -9,7 +9,6 @@ jobs:
   publish-to-docker:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 1
-      - run: ls
-      - run: echo `ls -al`
+      - run: echo `ls scripts`
+      - run: echo `ls`
       - run: sh scripts/docker/build.sh ${{ github.event.inputs.dockerTag }}
