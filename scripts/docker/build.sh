@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_HUB_USERNAME=divyenduz
+DOCKER_HUB_USERNAME=yujonglee
 
 if [ ! -z "$DOCKER_HUB_TOKEN" ]; then
 docker login -u "$DOCKER_HUB_USERNAME" -p "$DOCKER_HUB_TOKEN"
