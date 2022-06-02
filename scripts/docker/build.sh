@@ -8,7 +8,8 @@ fi
 
 set -eu
 
-(cd docker && docker-compose up -d)
+ls -al
+(cd scripts/docker && docker-compose up -d)
 
 docker run --rm -v "$PWD":/app treeder/bump --filename scripts/docker/postgresql/VERSION patch
 POSTGRES_DOCKER_TAG=$(cat scripts/docker/postgresql/VERSION)
