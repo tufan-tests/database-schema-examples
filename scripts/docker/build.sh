@@ -45,11 +45,11 @@ docker push $DOCKER_HUB_USERNAME/$MYSQL_IMAGE_NAME:$MYSQL_DOCKER_TAG
 
 (cd scripts/docker && docker-compose down)
 
-if [ ! -z "$CI" ]; then
-git add -A
-git commit -m "release: docker tag $MYSQL_DOCKER_TAG"
-git tag -a "$MYSQL_DOCKER_TAG" -m "version $MYSQL_DOCKER_TAG"
-git push
-git push --tags
-fi
+# if [ ! -z "$CI" ]; then
+# git add -A
+# git commit -m "release: docker tag $MYSQL_DOCKER_TAG"
+# git tag -a "$MYSQL_DOCKER_TAG" -m "version $MYSQL_DOCKER_TAG"
+# git push
+# git push --tags
+# fi
 
